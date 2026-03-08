@@ -47,7 +47,7 @@ def show_clean_table(df, compact=None, columns=None, width="80%"):
             width: {width};
             margin: 1rem auto;
             font-family: 'Segoe UI', sans-serif;
-            font-size: 2rem;
+            font-size: 1.5rem;
         }}
 
         .custom-table th {{
