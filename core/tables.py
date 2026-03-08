@@ -1,0 +1,87 @@
+# core/tables.py
+import streamlit as st
+import pandas as pd
+
+
+# ==========================================================
+# Styled Table Rendering
+# ==========================================================
+
+def show_clean_table(df, compact=None, columns=None, width="80%"):
+    """
+    Display a DataFrame with unified styling, centered on the page.
+
+    Args:
+        df: DataFrame to display
+        compact: use compact spacing
+        columns: optional list of columns to display
+        width: CSS width of the table container
+    """
+
+    if df is None or df.empty:
+        st.info("No data available.")
+        return
+
+    # ----------------------------
+    # Data Cleaning
+    # ----------------------------
+
+    df = df.loc[:, ~df.columns.str.contains("^Unnamed")].reset_index(drop=True)
+
+    if columns:
+        df = df[[c for c in columns if c in df.columns]]
+
+    compact = compact or (st.session_state.get("table_view_mode") == "compact")
+
+    cls = "compact-table" if compact else "expanded-table"
+
+    # ----------------------------
+    # Table Styling
+    # ----------------------------
+
+    st.markdown(
+        f"""
+        <style>
+        .custom-table {{
+            border-collapse: collapse;
+            width: {width};
+            margin: 1rem auto;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2rem;
+        }}
+
+        .custom-table th {{
+            background: #F5F0FF;
+            color: #AA4BFF;
+            border-bottom: 2px solid #E0CCFF;
+            text-align: center;
+            padding: 8px;
+        }}
+
+        .custom-table td {{
+            border-bottom: 1px solid #E0CCFF;
+            text-align: center;
+            padding: 6px;
+        }}
+
+        .custom-table tr:nth-child(even) {{ background-color: #FAF8FF; }}
+        .custom-table tr:hover {{ background-color: #F0E3FF; }}
+
+        .compact-table td,
+        .compact-table th {{
+            padding: 4px;
+            font-size: 0.9rem;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # ----------------------------
+    # Table Rendering
+    # ----------------------------
+
+    st.markdown(
+        df.to_html(index=False, escape=False, classes=f"custom-table {cls}"),
+        unsafe_allow_html=True,
+    )
