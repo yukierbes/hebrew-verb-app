@@ -128,3 +128,33 @@ def page():
         """,
         unsafe_allow_html=True,
     )
+
+    # ==================================================
+    # Feedback
+    # ==================================================
+
+    st.markdown("<div style='height:3rem'></div>", unsafe_allow_html=True)
+
+    st.markdown(
+        """
+        <div style="
+            text-align:center;
+            font-size:0.95rem;
+            color:#555;
+        ">
+            <b>Found a mistake or have a suggestion?</b><br>
+            Help improve the Hebrew Verb App by reporting issues or submitting feedback.<br><br>
+            <a href="https://forms.gle/abrMxJfCp6mpLH9y6" target="_blank"
+               style="
+               background:#AA4BFF;
+               color:white;
+               padding:0.5rem 1.2rem;
+               border-radius:8px;
+               text-decoration:none;
+               font-weight:600;">
+               Submit Feedback
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
