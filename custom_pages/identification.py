@@ -50,7 +50,14 @@ def show_practice(df, filters):
 
     st.markdown(
         """
-        <div style="background:#F1E8FF;padding:16px;border-radius:12px;border:1px solid #E2D6FF;">
+        <div style="
+            background:var(--secondary-background-color);
+            padding:16px;
+            border-radius:12px;
+            border:2px solid var(--primary-color);
+            color:var(--text-color);
+            margin-bottom:10px;
+        ">
         <b>Instructions</b><br>
         Parse the features of the verb.<br>
         Use <i>Check Answer</i> for feedback or <i>Show Answer</i> to reveal the solution/s.
@@ -147,7 +154,7 @@ def show_practice(df, filters):
     def header_color(label):
 
         if not st.session_state.ident_checked:
-            return "#FBF8FF"
+            return "var(--secondary-background-color)"
 
         user = user_answers.get(label, "")
         valid = row[FIELD_MAP.get(label, label)]
@@ -158,13 +165,13 @@ def show_practice(df, filters):
         normalized_user = "" if user == "NA" else user
 
         if normalized_user in valid:
-            return "#E7F6E7"
+            return "rgba(40,167,69,0.25)"
 
         if user:
-            return "#FFF4D6"
+            return "rgba(255,193,7,0.30)"
 
-        return "#FBF8FF"
-
+        return "var(--secondary-background-color)"
+        
     # ==================================================
     # Dropdown / Input Options
     # ==================================================
@@ -208,15 +215,18 @@ def show_practice(df, filters):
 
         st.markdown(
             f"""
-            <div style="padding:8px 12px;border-radius:10px;
-                        background:{header_color(label)};
-                        border:1px solid #E2D6FF;font-weight:600;">
+            <div style="
+                padding:8px 12px;
+                border-radius:10px;
+                border:1px solid #E2D6FF;
+                background:{header_color(label)};
+                font-weight:600;
+            ">
                 {label}
             </div>
             """,
             unsafe_allow_html=True,
         )
-
         mode = st.session_state.ident_input_mode
 
         if mode == "Dropdown":

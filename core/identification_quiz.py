@@ -327,9 +327,9 @@ def color_answer(user, valid):
         return ""
 
     if normalized_user in valid:
-        return f"<span style='background:#E7F6E7;padding:2px 6px;border-radius:6px;'>{user}</span>"
+        return f"<span style='background:rgba(40,167,69,0.25);padding:3px 8px;border-radius:6px;font-weight:600;'>{user}</span>"
 
-    return f"<span style='background:#FFE6E6;padding:2px 6px;border-radius:6px;'>{user}</span>"
+    return f"<span style='background:rgba(220,53,69,0.25);padding:3px 8px;border-radius:6px;font-weight:600;'>{user}</span>"
 
 
 def step_summary():

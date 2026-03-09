@@ -51,7 +51,13 @@ def show_practice(df, filters):
 
     st.markdown(
         """
-        <div style="background:#F1E8FF;padding:16px;border-radius:12px;border:1px solid #E2D6FF;">
+        <div style="background:var(--secondary-background-color);
+            padding:16px;
+            border-radius:12px;
+            border:2px solid var(--primary-color);
+            color:var(--text-color);
+            margin-bottom:10px;
+        ">
         <b>Instructions</b><br>
         Click <i>Generate a Verb</i>, construct the form, then reveal all valid answers.
         </div>

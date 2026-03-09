@@ -12,7 +12,7 @@ def render_dataset_selector():
     a DataFrame containing the selected datasets.
     """
 
-    st.sidebar.markdown("### Datasets")
+    st.sidebar.markdown("### Verbal Roots")
 
     available = get_available_datasets()
 
@@ -40,7 +40,7 @@ def render_dataset_selector():
     # ----------------------------
 
     selected = st.sidebar.multiselect(
-        "Select datasets",
+        "Select roots",
         options=available,
         key="selected_datasets",
     )

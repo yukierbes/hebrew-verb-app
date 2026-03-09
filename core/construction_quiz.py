@@ -224,15 +224,17 @@ def step_summary():
     st.subheader(f"Score: {correct} / {total} ({percent}%)")
     st.write("---")
 
-    # Highlight results
     def format_result(val):
-        if val == "Correct":
-            return "<span style='background:#E7F6E7;padding:4px 8px;border-radius:6px;font-weight:600;'>{}</span>".format(val)
-        elif val == "NA":
-            return "<span style='background:#FFF4D6;padding:4px 8px;border-radius:6px;font-weight:600;'>{}</span>".format(val)
-        else:
-            return "<span style='background:#FFE6E6;padding:4px 8px;border-radius:6px;font-weight:600;'>{}</span>".format(val)
 
+        if val == "Correct":
+            return "<span style='background:rgba(40,167,69,0.25);padding:4px 8px;border-radius:6px;font-weight:600;'>Correct</span>"
+
+        elif val == "NA":
+            return "<span style='background:rgba(255,193,7,0.30);padding:4px 8px;border-radius:6px;font-weight:600;'>NA</span>"
+
+        else:
+            return "<span style='background:rgba(220,53,69,0.25);padding:4px 8px;border-radius:6px;font-weight:600;'>Incorrect</span>"
+        
     df["Result"] = df["Result"].apply(format_result)
     show_clean_table(df)
 

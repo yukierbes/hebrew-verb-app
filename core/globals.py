@@ -77,8 +77,16 @@ def inject_global_styles():
     st.markdown(
         """
         <style>
+
         :root { --primary-color: #AA4BFF; }
 
+        /* Base text + background */
+        html, body, [data-testid="stAppViewContainer"] {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Sidebar buttons */
         div.stSidebar div.stButton>button {
             background-color: var(--primary-color) !important;
             color: white !important;
@@ -102,19 +110,14 @@ def inject_global_styles():
         div.stButton>button {
             background-color: var(--primary-color) !important;
             color: white !important;
-            border: none !important;
             border-radius: 8px !important;
-            padding: 8px 12px !important;
-            font-weight: 600 !important;
+            border: none !important;
         }
 
-        div.stButton>button:hover {
-            background-color: #922CFF !important;
-        }
-
+        /* Tables (theme aware) */
         .custom-table th {
-            background: #F5F0FF;
-            color: #7A2CFF;
+            background: var(--secondary-background-color);
+            color: var(--primary-color);
             padding: 8px;
             text-align: center;
         }
@@ -122,8 +125,10 @@ def inject_global_styles():
         .custom-table td {
             padding: 6px;
             text-align: center;
-            border-bottom: 1px solid #E0CCFF;
+            border-bottom: 1px solid var(--secondary-background-color);
+            color: var(--text-color);
         }
+
         </style>
         """,
         unsafe_allow_html=True,
@@ -160,10 +165,19 @@ def set_background(page: str = "home"):
         st.markdown(
             """
             <style>
-            [data-testid="stAppViewContainer"],
-            section[data-testid="stSidebar"] {
-                background: linear-gradient(135deg, #F5F0FF 0%, #E6D6FF 100%) !important;
+
+            [data-testid="stAppViewContainer"] {
+                background: linear-gradient(
+                    135deg,
+                    var(--background-color) 0%,
+                    var(--secondary-background-color) 100%
+                );
             }
+
+            section[data-testid="stSidebar"] {
+                background-color: var(--secondary-background-color);
+            }
+
             </style>
             """,
             unsafe_allow_html=True,
@@ -173,13 +187,15 @@ def set_background(page: str = "home"):
         st.markdown(
             """
             <style>
+
             section[data-testid="stSidebar"] {
-                background: linear-gradient(135deg, #F5F0FF 0%, #E6D6FF 100%) !important;
+                background-color: var(--secondary-background-color);
             }
 
             [data-testid="stAppViewContainer"] {
-                background-color: white !important;
+                background-color: var(--background-color);
             }
+
             </style>
             """,
             unsafe_allow_html=True,

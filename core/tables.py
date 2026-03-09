@@ -44,25 +44,32 @@ def show_clean_table(df, compact=None, columns=None, width="80%"):
             margin: 1rem auto;
             font-family: 'Segoe UI', sans-serif;
             font-size: 1.5rem;
+            color: var(--text-color);
         }}
 
         .custom-table th {{
-            background: #F5F0FF;
-            color: #AA4BFF;
-            border-bottom: 2px solid #E0CCFF;
+            background: var(--secondary-background-color);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-background-color);
             text-align: center;
             padding: 8px;
-            white-space: nowrap;  /* prevent header wrapping */
+            white-space: nowrap;
         }}
 
         .custom-table td {{
-            border-bottom: 1px solid #E0CCFF;
+            border-bottom: 1px solid var(--secondary-background-color);
             text-align: center;
             padding: 6px;
+            color: var(--text-color);
         }}
 
-        .custom-table tr:nth-child(even) {{ background-color: #FAF8FF; }}
-        .custom-table tr:hover {{ background-color: #F0E3FF; }}
+        .custom-table tr:nth-child(even) {{
+            background-color: var(--background-color);
+        }}
+
+        .custom-table tr:hover {{
+            background-color: var(--secondary-background-color);
+        }}
 
         .compact-table td,
         .compact-table th {{

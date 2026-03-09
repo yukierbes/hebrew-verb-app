@@ -118,7 +118,7 @@ def page():
             text-align: center;
             direction: rtl;
             font-size: 2.75rem;
-            color: black;
+            color: var(--text-color);
             font-family: 'SBL Hebrew', serif;
             line-height: 2.4rem;
         ">

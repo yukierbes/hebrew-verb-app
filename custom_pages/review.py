@@ -31,7 +31,13 @@ def page():
 
     st.markdown(
         """
-        <div style="background:#F1E8FF;padding:16px;border-radius:12px;border:1px solid #E2D6FF;">
+        <div style="background:var(--secondary-background-color);
+            padding:16px;
+            border-radius:12px;
+            border:2px solid var(--primary-color);
+            color:var(--text-color);
+            margin-bottom:10px;
+        ">
         💡 <strong>Tip:</strong> Use the filters to narrow the table.<br>
         Download the table to create flashcards or study lists.
         </div>

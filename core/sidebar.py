@@ -7,7 +7,6 @@ import streamlit as st
 
 def show_sidebar_navigation():
 
-    # Inject CSS for full-width navigation buttons
     st.markdown(
         """
         <style>
