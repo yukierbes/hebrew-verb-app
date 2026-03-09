@@ -53,7 +53,7 @@ def page():
         },
         {
             "label": "Construction",
-            "desc": "Master verb morphology by being able to write it",
+            "desc": "Master verb morphology by being able to write it & practice writing translations",
             "key": "construction",
         },
     ]

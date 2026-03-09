@@ -38,7 +38,7 @@ def page():
             color:var(--text-color);
             margin-bottom:10px;
         ">
-        💡 <strong>Tip:</strong> Use the filters to narrow the table.<br>
+        💡 <strong>Tip:</strong> Use the filters in the sidebar to narrow the table.<br>
         Download the table to create flashcards or study lists.
         </div>
         """,

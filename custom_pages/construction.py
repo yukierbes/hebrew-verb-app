@@ -59,7 +59,8 @@ def show_practice(df, filters):
             margin-bottom:10px;
         ">
         <b>Instructions</b><br>
-        Click <i>Generate a Verb</i>, construct the form, then reveal all valid answers.
+        Click <i>Generate a Verb</i>, to provide a prompt. This can be used to practice translating or writing forms.<br>
+        Click <i>Show Answer</i>, to reveal the conjugation and gloss translation.
         </div>
         """,
         unsafe_allow_html=True,

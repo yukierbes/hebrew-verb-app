@@ -59,8 +59,8 @@ def show_practice(df, filters):
             margin-bottom:10px;
         ">
         <b>Instructions</b><br>
-        Parse the features of the verb.<br>
-        Use <i>Check Answer</i> for feedback or <i>Show Answer</i> to reveal the solution/s.
+        Click <i>Generate a Verb</i> to generate a random conjugation. Then parse the features of the verb.<br>
+        Click <i>Check Answer</i> for feedback or <i>Show Answer</i> to reveal the solution/s.
         </div>
         """,
         unsafe_allow_html=True,
